@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta property="og:title" content="Compte à rebours : The Warning au Bikini !">
+    <meta property="og:description" content="The Warning à Toulouse le 6 juillet 2026 !">
+    <meta property="og:image" content="https://amaucatepetl.github.io/WAWAS_COUNTDOWN/679171446_3352320778260948_1891023019599202053_n.jpg">
+    <meta property="og:url" content="https://amaucatepetl.github.io/WAWAS_COUNTDOWN/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#e63946">
+
+    <title>The Warning - Toulouse 2026</title>
+    <style>
+body { 
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('679171446_3352320778260948_1891023019599202053_n.jpg');
+    
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #000000;
+    
+    color: #e63946; 
+    font-family: 'Arial Black', sans-serif; 
+    text-align: center; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    height: 100vh; 
+    margin: 0; 
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.9);
+}
+
+        h1 { 
+            font-size: 3.5rem; 
+            text-transform: uppercase; 
+            letter-spacing: 5px; 
+            margin-bottom: 20px;
+        }
+
+        #countdown { 
+            font-size: 3.5rem; 
+            font-weight: bold; 
+        }
+
+        .unit { 
+            font-size: 1.5rem; 
+            margin-right: 10px; 
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>THE WARNING - TOULOUSE</h1>
+    <div id="countdown"></div>
+
+    <script>
+        const targetDate = new Date("July 6, 2026 20:00:00").getTime();
+
+        const timer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = 
+                days + "<span class='unit'>j</span> " + 
+                hours + "<span class='unit'>h</span> " + 
+                minutes + "<span class='unit'>m</span> " + 
+                seconds + "<span class='unit'>s</span>";
+
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("countdown").innerHTML = "SHOWTIME !";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
