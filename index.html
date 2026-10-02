@@ -56,27 +56,54 @@ body {
     <div id="countdown"></div>
 
     <script>
-        const targetDate = new Date("March 12, 2027 20:00:00").getTime();
+        const targetDateLyon = new Date("March 12, 2027 20:00:00").getTime();
+        const targetDateParis = new Date("March 23, 2027 20:00:00").getTime();
 
         const timer = setInterval(function() {
             const now = new Date().getTime();
-            const distance = targetDate - now;
+            const distanceLyon = targetDateLyon - now;
+            const distanceParis = targetDateParis - now;
 
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            const daysLyon = Math.floor(distanceLyon / (1000 * 60 * 60 * 24));
+            const hoursLyon = Math.floor((distanceLyon % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutesLyon = Math.floor((distanceLyon % (1000 * 60 * 60)) / (1000 * 60));
+            const secondsLyon = Math.floor((distanceLyon % (1000 * 60)) / 1000);
+
+            const daysParis = Math.floor(distanceParis / (1000 * 60 * 60 * 24));
+            const hoursParis = Math.floor((distanceParis % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutesParis = Math.floor((distanceParis % (1000 * 60 * 60)) / (1000 * 60));
+            const secondsParis = Math.floor((distanceParis % (1000 * 60)) / 1000);
 
             document.getElementById("countdown").innerHTML = 
                 "LYON : " +
-                days + "<span class='unit'>j</span> " + 
-                hours + "<span class='unit'>h</span> " + 
-                minutes + "<span class='unit'>m</span> " + 
-                seconds + "<span class='unit'>s</span>";
+                daysLyon + "<span class='unit'>j</span> " + 
+                hoursLyon + "<span class='unit'>h</span> " + 
+                minutesLyon + "<span class='unit'>m</span> " + 
+                secondsLyon + "<span class='unit'>s</span>" +
+                "<br>" +
+                "PARIS : " +
+                daysParis + "<span class='unit'>j</span> " + 
+                hoursParis + "<span class='unit'>h</span> " + 
+                minutesParis + "<span class='unit'>m</span> " + 
+                secondsParis + "<span class='unit'>s</span>"
+                
+                
+                ;
 
-            if (distance < 0) {
+            if (distanceLyon < 0) {
                 clearInterval(timer);
-                document.getElementById("countdown").innerHTML = "LYON SHOWTIME !";
+                document.getElementById("countdown").innerHTML = "LYON SHOWTIME !" +
+                "<br>" +
+                "PARIS : " +
+                daysParis + "<span class='unit'>j</span> " + 
+                hoursParis + "<span class='unit'>h</span> " + 
+                minutesParis + "<span class='unit'>m</span> " + 
+                secondsParis + "<span class='unit'>s</span>";
+            }
+
+            if (distanceParis < 0) {
+                clearInterval(timer);
+                document.getElementById("countdown").innerHTML = "PARIS SHOWTIME !";
             }
         }, 1000);
     </script>
