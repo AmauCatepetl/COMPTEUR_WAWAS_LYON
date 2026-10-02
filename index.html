@@ -2,18 +2,18 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta property="og:title" content="Compte à rebours : The Warning au Bikini !">
-    <meta property="og:description" content="The Warning à Toulouse le 6 juillet 2026 !">
-    <meta property="og:image" content="https://amaucatepetl.github.io/WAWAS_COUNTDOWN/679171446_3352320778260948_1891023019599202053_n.jpg">
-    <meta property="og:url" content="https://amaucatepetl.github.io/WAWAS_COUNTDOWN/">
+    <meta property="og:title" content="Compte à rebours : The Warning en France !">
+    <meta property="og:description" content="The Warning à Lyon le 12 Mars 2027 et Paris le 23 Mars 2027 !">
+    <meta property="og:image" content="https://github.com/AmauCatepetl/COMPTEUR_WAWAS_LYON/blob/main/wawas_affiche_lyon_paris.jpeg">
+    <meta property="og:url" content="COMPTEUR_WAWAS_LYON/">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="theme-color" content="#e63946">
 
-    <title>The Warning - Toulouse 2026</title>
+    <title>The Warning - France 2027</title>
     <style>
 body { 
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('679171446_3352320778260948_1891023019599202053_n.jpg');
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('wawas_affiche_lyon_paris.jpeg');
     
     background-size: contain;
     background-repeat: no-repeat;
@@ -52,11 +52,11 @@ body {
 </head>
 <body>
 
-    <h1>THE WARNING - TOULOUSE</h1>
+    <h1>THE WARNING - FRANCE</h1>
     <div id="countdown"></div>
 
     <script>
-        const targetDate = new Date("July 6, 2026 20:00:00").getTime();
+        const targetDate = new Date("March 12, 2027 20:00:00").getTime();
 
         const timer = setInterval(function() {
             const now = new Date().getTime();
@@ -75,7 +75,7 @@ body {
 
             if (distance < 0) {
                 clearInterval(timer);
-                document.getElementById("countdown").innerHTML = "SHOWTIME !";
+                document.getElementById("countdown").innerHTML = "LYON SHOWTIME !";
             }
         }, 1000);
     </script>
